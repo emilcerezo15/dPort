@@ -1,0 +1,43 @@
+@import 'app';
+
+.full-width-height {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+html {
+  @extend .full-width-height;
+
+  body {
+    @extend .full-width-height;
+
+    .container  {
+      @extend .full-width-height;
+    }
+
+    .bg {
+      display: none;
+      position: fixed;
+      background-position: center center;
+
+      @extend .full-width-height;
+
+      &.think {
+        background-image: url("../images/think.jpg");
+        &:hover {
+          
+        }
+      }
+
+      &.enter {
+        background-image: url("../images/enter.jpg");
+      }
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

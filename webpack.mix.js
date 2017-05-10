@@ -12,17 +12,19 @@ const { mix } = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/sass/style.scss', 'public/css')
+    .options({
+        processCssUrls:false
+    })
 
-    
-
-    /* Plugins */
     .styles([
-        'resources/assets/sass/plugins/materialize.css'
-    ], 'public/css/plugins.css')
+        'resources/assets/sass/plugins/materialize.css',
+        'public/css/style.css',
+    ], 'public/css/all.css')
 
     .scripts ([
-        'resources/assets/js/plugins/materialize.js'
-    ], 'public/js/plugins.js');
+        'resources/assets/js/plugins/materialize.js',
+        'resources/assets/js/script.js'
+    ], 'public/js/all.js');
 
 

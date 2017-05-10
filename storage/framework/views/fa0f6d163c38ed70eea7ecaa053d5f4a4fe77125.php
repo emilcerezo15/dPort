@@ -23,12 +23,14 @@
 
         <title>dPort - <?php echo $__env->yieldContent('title'); ?></title>
 
+        <link rel="stylesheet" href="<?php echo e(asset('/css/all.css')); ?>"/>
+
     </head>
 
     <body>
         <input id="BASE_URL" type="hidden" value="<?php echo e(URL::to('/')); ?>"/>
 
-        <div class="container">
+        <div class="container full-width">
 
             <?php echo $__env->yieldContent('content'); ?>
 

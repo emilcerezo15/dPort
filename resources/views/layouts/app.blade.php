@@ -23,12 +23,14 @@
 
         <title>dPort - @yield('title')</title>
 
+        <link rel="stylesheet" href="{{ asset('/css/all.css') }}"/>
+
     </head>
 
     <body>
         <input id="BASE_URL" type="hidden" value="{{ URL::to('/') }}"/>
 
-        <div class="container">
+        <div class="container full-width">
 
             @yield('content')
 
