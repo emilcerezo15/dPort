@@ -23,6 +23,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
     ], 'public/css/all.css')
 
     .scripts ([
+        'resources/assets/js/plugins/jQuery.js',
         'resources/assets/js/plugins/materialize.js',
         'resources/assets/js/script.js'
     ], 'public/js/all.js');
