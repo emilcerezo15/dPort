@@ -1,85 +1,103 @@
 @import 'app';
 
-.full-width-height {
-  width: 100%;
+.full-width-height{
   height: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  width: 100%;
 }
 
-html {
+html, body, .container {
+  @extend .full-width-height;
+}
+
+.container {
+  max-width: none;
+  overflow-x: hidden;
   @extend .full-width-height;
 
-  body {
+  .home {
     @extend .full-width-height;
 
-    .container  {
+    .bg {
+      background-image: url("../images/laptop.jpg");
+      transition: height 1s ease-in-out;
       @extend .full-width-height;
     }
-
-    .modal.bottom-sheet {
-      max-height: 80%;
-    }
-
-    .main {
-      nav {
-        background-color: transparent;
-        box-shadow: none;
-        position: absolute;
-        top: 70%;
-        height: auto;
-        line-height: 0;
-
-        i {
-          height: auto;
-          font-size: 30px;
-        }
-
-        .nav-list {
-          margin: auto;
-          text-align:center ;
-
-          > div {
-            display: inline-block;
-            margin: 0 5%;
-          }
-        }
-      }
-
-      .bg-default {
-        position: fixed;
-        background-position: center center;
-        z-index: -1;
-        background-color: rgba(230,81,0, .7);
-        @extend .full-width-height;
-      }
-
-      .bg-filter {
-        @extend .full-width-height;
-        @extend .bg-default;
-        display: block;
-      }
-
-      .bg {
-        display: none;
-        @extend .bg-default;
-
-        &.think {
-          background-image: url("../images/laptop.jpg");
-          &:hover {
-
-          }
-        }
-
-        &.enter {
-          background-image: url("../images/enter.jpg");
-        }
-
-        &.show {
-          display: block;
-        }
-      }
-    }
-
   }
 }
+
+//html {
+//  @extend .full-width-height;
+//
+//  body {
+//    @extend .full-width-height;
+//
+//    .container  {
+//      @extend .full-width-height;
+//    }
+//
+//    .modal.bottom-sheet {
+//      max-height: 90%;
+//    }
+//
+//    .main {
+//      nav {
+//        background-color: transparent;
+//        box-shadow: none;
+//        position: absolute;
+//        top: 70%;
+//        height: auto;
+//        line-height: 0;
+//
+//        i {
+//          height: auto;
+//          font-size: 30px;
+//        }
+//
+//        .nav-list {
+//          margin: auto;
+//          text-align:center ;
+//
+//          > div {
+//            display: inline-block;
+//            margin: 0 5%;
+//          }
+//        }
+//      }
+//
+//      .bg-default {
+//        position: fixed;
+//        background-position: center center;
+//        z-index: -1;
+//        background-color: rgba(230,81,0, .7);
+//        @extend .full-width-height;
+//      }
+//
+//      .bg-filter {
+//        @extend .full-width-height;
+//        @extend .bg-default;
+//        display: block;
+//      }
+//
+//      .bg {
+//        display: none;
+//        @extend .bg-default;
+//
+//        &.think {
+//          background-image: url("../images/laptop.jpg");
+//          &:hover {
+//
+//          }
+//        }
+//
+//        &.enter {
+//          background-image: url("../images/enter.jpg");
+//        }
+//
+//        &.show {
+//          display: block;
+//        }
+//      }
+//    }
+//
+//  }
+//}
