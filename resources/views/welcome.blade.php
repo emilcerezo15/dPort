@@ -3,59 +3,26 @@
 @section('title', 'Home')
 
 @section('content')
-<!--<div class="row">-->
-<!--    <div class="col s12 main">-->
-<!--        <div class="bg think show"></div>-->
-<!--        <div class="bg enter  "></div>-->
-<!--        <div class="bg-filter"></div>-->
-<!--        <nav>-->
-<!--            <div class="nav-list">-->
-<!--                <div><a href=""><i class="fa fa-user"></i></a></div>-->
-<!--                <div><a href=""><i class="fa fa-desktop"></i></a></div>-->
-<!--                <div><a href=""><i class="fa fa-mouse-pointer"></i></a></div>-->
-<!--                <div><a href=""><i class="fa fa-envelope"></i></a></div>-->
-<!--            </div>-->
-<!--        </nav>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<a class="waves-effect waves-light btn" href="#modal1">Modal</a>-->
-<!---->
-<!--<!-- Modal Structure -->
-<!--<div id="modal1" class="modal bottom-sheet">-->
-<!--    <div class="modal-content">-->
-<!--        <h4>Modal Header</h4>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p><p>A bunch of text</p><p>A bunch of text</p><p>A bunch of text</p><p>A bunch of text</p><p>A bunch of text</p><p>A bunch of text</p><p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!--        <p>A bunch of text</p>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--    </div>-->
-<!--    <div class="modal-footer">-->
-<!--        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>-->
-<!--    </div>-->
-<!--</div>-->
-
     <div class="home">
+        <div class="filter"></div>
         <div class="bg">
-            <button onclick="$('.bg').height('64px')">click</button>
+            <a href="#" class="navAClick" id="profile">
+                <h1>Emil Cerezo</h1>
+                <label for="">Web developer</label>
+            </a>
+            <nav>
+                <div class="nav-content">
+                    <a href="#aboutme" class="navAClick" id="aboutme"><i class="fa fa-user"></i><span>About Me</span></a>
+                    <a href="#work" class="navAClick" id="work"><i class="fa fa-desktop"></i><span>Work</span></a>
+                    <a href="#process" class="navAClick" id="process"><i class="fa fa-mouse-pointer"></i><span>Process</span></a>
+                    <a href="#contact" class="navAClick" id="contact"><i class="fa fa-envelope"></i><span>Contact</span></a>
+                </div>
+            </nav>
         </div>
     </div>
+
+    <aside class="aboutme">@include('aboutme')</aside>
+    <aside class="work">@include('work')</aside>
+    <aside class="process">@include('process')</aside>
+    <aside class="contact">@include('contact')</aside>
 @endsection

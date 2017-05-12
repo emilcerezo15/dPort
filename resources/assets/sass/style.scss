@@ -11,93 +11,85 @@ html, body, .container {
 
 .container {
   max-width: none;
-  overflow-x: hidden;
+  overflow: hidden;
   @extend .full-width-height;
 
   .home {
     @extend .full-width-height;
+    transition: height .4s ease-in-out;
+    .filter {
+      position: absolute;
+      background-color: rgba(36,119,173, .7);
+      @extend .full-width-height;
+    }
 
     .bg {
       background-image: url("../images/laptop.jpg");
-      transition: height 1s ease-in-out;
+      background-repeat: no-repeat;
+      background-size: cover;
       @extend .full-width-height;
+
+      > a {
+          position: absolute;
+          top: 10px;
+          left: 10%;
+
+          h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 20px;
+          }
+      }
+
+
+      nav {
+        line-height: initial;
+        background: transparent;
+        box-shadow: none;
+        transition: all .3s linear;
+        top: 80%;
+        position: absolute;
+
+        > div {
+          text-align: center;
+          width: 80%;
+          margin: auto;
+
+          a {
+            margin: 0 8%;
+            display: inline-block;
+
+            i {
+              line-height: initial;
+              height: auto;
+              display: block;
+              font-size: 40px
+            }
+
+            &.click {
+
+              i, span {
+                display: none;
+              }
+
+              margin: 0 3%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  aside {
+    height: calc(100% - 64px);
+    overflow-y: auto;
+    position: fixed;
+    top: 100%;
+    transition: all .3s linear;
+    background-color: #fff;
+
+    &.active {
+      top: 64px;
     }
   }
 }
-
-//html {
-//  @extend .full-width-height;
-//
-//  body {
-//    @extend .full-width-height;
-//
-//    .container  {
-//      @extend .full-width-height;
-//    }
-//
-//    .modal.bottom-sheet {
-//      max-height: 90%;
-//    }
-//
-//    .main {
-//      nav {
-//        background-color: transparent;
-//        box-shadow: none;
-//        position: absolute;
-//        top: 70%;
-//        height: auto;
-//        line-height: 0;
-//
-//        i {
-//          height: auto;
-//          font-size: 30px;
-//        }
-//
-//        .nav-list {
-//          margin: auto;
-//          text-align:center ;
-//
-//          > div {
-//            display: inline-block;
-//            margin: 0 5%;
-//          }
-//        }
-//      }
-//
-//      .bg-default {
-//        position: fixed;
-//        background-position: center center;
-//        z-index: -1;
-//        background-color: rgba(230,81,0, .7);
-//        @extend .full-width-height;
-//      }
-//
-//      .bg-filter {
-//        @extend .full-width-height;
-//        @extend .bg-default;
-//        display: block;
-//      }
-//
-//      .bg {
-//        display: none;
-//        @extend .bg-default;
-//
-//        &.think {
-//          background-image: url("../images/laptop.jpg");
-//          &:hover {
-//
-//          }
-//        }
-//
-//        &.enter {
-//          background-image: url("../images/enter.jpg");
-//        }
-//
-//        &.show {
-//          display: block;
-//        }
-//      }
-//    }
-//
-//  }
-//}
