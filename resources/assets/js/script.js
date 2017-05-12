@@ -15,14 +15,14 @@ $(document).ready(function () {
 
     $('.navAClick').on('click', function () {
         var id = $(this).attr('id');
+
         $('nav').css({'top': 0, 'line-height': '64px'});
         $('.home').find('a').addClass('click');
-        if(afterHashUrl || id) {
-            setTimeout(function () {
-                $('.nav-content').css('text-align', 'right');
-                $('a.click').find('span').fadeIn();
-            }, 600);
-        }
+        setTimeout(function () {
+            $('.nav-content').css('text-align', 'right');
+            $('a.click').find('span').fadeIn();
+        }, 600);
+
         $('aside').removeClass('active');
         $('.'+id).addClass('active');
     });
