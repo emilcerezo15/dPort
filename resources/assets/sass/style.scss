@@ -77,6 +77,11 @@ html, body, .container {
             }
           }
         }
+
+        &.active {
+          top: 0;
+          line-height: 64px;
+        }
       }
     }
   }

@@ -6,7 +6,7 @@
     <div class="home">
         <div class="filter"></div>
         <div class="bg">
-            <a href="#" class="navAClick" id="profile">
+            <a href="#" class="navAClick">
                 <h1>Emil Cerezo</h1>
                 <label for="">Web developer</label>
             </a>
