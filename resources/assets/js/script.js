@@ -1,41 +1,36 @@
 $(document).ready(function () {
-    var thisFile = '';
-    var bg = $('.bg');
+    var nav = $('nav');
     var afterHashUrl = location.hash.substr(1);
 
-//    bg.hover(function () {
-//        bg.removeClass('show');
-//        thisFile = $(this);
-//        thisFile.addClass('show');
-//    }, function () {
-//        bg.removeClass('show');
-//        $('.bg:first-child').addClass('show');
-//    });
+    nav.find('a').hover(function () {
+        nav.find('a').addClass('fade');
+        $(this).addClass('focus');
+    }, function () {
+        nav.find('a').removeClass('fade').removeClass('focus');
+    });
 
     $('.navAClick').on('click', function () {
         var id = $(this).attr('id');
-        var nav = $('nav');
-
-        nav.find('a').hide();
 
         if(id != 'profile') {
-            $('.bg > a').attr('id', 'profile');
-            $('.nav-content').css('text-align', 'right');
+            if(!$(this).hasClass('profile')) {
+                $('.bg > a').attr('id', 'profile');
+                $('.nav-content').css('text-align', 'right');
 
-            nav.find('a').addClass('click');
-            nav.addClass('active');
+                nav.addClass('active');
+                nav.find('a').addClass('click');
 
-            setTimeout(function () {
-                $('a.click').find('span').fadeIn();
-                nav.find('a').fadeIn();
-            }, 600);
-
+                setTimeout(function () {
+                    $('a.click').find('span').fadeIn();
+                    nav.find('a').fadeIn();
+                }, 600);
+            }
         } else {
-//            $('a.click').find('span').fadeOut();
             nav.find('a').fadeOut(function () {
                 nav.removeClass('active');
                 $('.nav-content').css('text-align', 'center');
                 $('.bg > a').removeAttr('id');
+                $('a.click').find('span').removeAttr('style');
                 setTimeout(function (){
                     nav.find('a').removeClass('click');
                     nav.find('a').fadeIn();
@@ -52,5 +47,7 @@ $(document).ready(function () {
 
     /** Initializations **/
     $('.modal').modal();
+
+
 
 });

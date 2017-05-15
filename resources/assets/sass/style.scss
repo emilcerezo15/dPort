@@ -17,48 +17,63 @@ html, body, .container {
   .home {
     @extend .full-width-height;
     transition: height .4s ease-in-out;
+
     .filter {
       position: absolute;
-      background-color: rgba(36,119,173, .7);
+//      background-color: rgba(36,119,173, .5);
+      background-color: rgba(0,0,0, .5);
       @extend .full-width-height;
     }
 
     .bg {
-      background-image: url("../images/laptop.jpg");
+      background-image: url("../images/street.jpg");
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center center;
       @extend .full-width-height;
 
       > a {
-          position: absolute;
-          top: 10px;
-          left: 10%;
-          z-index: 1;
+        position: absolute;
+        top: 10px;
+        left: 10%;
+        z-index: 1;
+        color: #ceb15a;
 
-          h1 {
-            margin: 0;
-            color: #fff;
-            font-size: 20px;
-          }
+        h1 {
+          margin: 0;
+          font-size: 30px;
+        }
+
+        i {
+          cursor: pointer;
+          color: inherit;
+        }
+
+        &#profile {
+          transition: all .3s linear;
+          font-size: 20px;
+        }
       }
-
 
       nav {
         line-height: initial;
         background: transparent;
         box-shadow: none;
         transition: all .3s linear;
-        top: 80%;
+        top: 50%;
         position: absolute;
 
         > div {
           text-align: center;
-          width: 80%;
+          max-width: 80%;
           margin: auto;
 
           a {
-            margin: 0 8%;
+//            margin: 0 8%;
             display: inline-block;
+//            border: 1px solid #ceb15a;
+            color: #ceb15a;
+            margin: 0 8%;
 
             i {
               line-height: initial;
@@ -75,6 +90,14 @@ html, body, .container {
 
               margin: 0 3%;
             }
+
+            &.fade {
+              opacity:.5;
+            }
+
+            &.fade.focus {
+              opacity: 1;
+            }
           }
         }
 
@@ -87,15 +110,72 @@ html, body, .container {
   }
 
   aside {
-    height: calc(100% - 64px);
+    height: 100%;
     overflow-y: auto;
     position: fixed;
     top: 100%;
-    transition: all .3s linear;
+    transition: all .1s linear;
     background-color: #fff;
 
     &.active {
       top: 64px;
+      animation-name: navAnimate;
+      -webkit-animation-name: navAnimate;
+      animation-duration: .8s;
+      -webkit-animation-duration: .8s;
+      z-index: 1;
+    }
+
+    > div {
+      max-width: 80%;
+      margin: auto;
     }
   }
 }
+
+/*********** MEDIA ************/
+@media screen and (max-width: 600px) {
+  .container {
+    .home {
+      .bg {
+        nav {
+          top: 40%;
+          > div {
+            a {
+              margin: 14%;
+            }
+          }
+
+          &.active {
+            display: none;
+          }
+        }
+
+        .profile {
+          text-align: center;
+        }
+
+        > a {
+          right: 10%;
+        }
+      }
+    }
+
+    aside {
+      &.active {
+        animation-duration: .5s;
+        -webkit-animation-duration: .5s;
+      }
+    }
+  }
+}
+
+
+/************ KEYFRAMES ************/
+@keyframes navAnimate {
+  0% { top: 100% }
+  50% {top: 35px}
+  100% { top: 64px }
+
+}
+
