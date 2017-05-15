@@ -14,13 +14,13 @@ html, body, .container {
   overflow: hidden;
   @extend .full-width-height;
 
+/*********** NAV ************/
   .home {
     @extend .full-width-height;
     transition: height .4s ease-in-out;
 
     .filter {
       position: absolute;
-//      background-color: rgba(36,119,173, .5);
       background-color: rgba(0,0,0, .5);
       @extend .full-width-height;
     }
@@ -41,17 +41,26 @@ html, body, .container {
 
         h1 {
           margin: 0;
-          font-size: 30px;
+          font-size: 35px;
+          transition: all .3s linear;
         }
 
         i {
           cursor: pointer;
           color: inherit;
+          font-size: 20px;
+          transition: all .3s linear;
         }
 
         &#profile {
-          transition: all .3s linear;
-          font-size: 20px;
+
+          h1 {
+            font-size: 22px;
+          }
+
+          i {
+            font-size: 14px;
+          }
         }
       }
 
@@ -69,9 +78,7 @@ html, body, .container {
           margin: auto;
 
           a {
-//            margin: 0 8%;
             display: inline-block;
-//            border: 1px solid #ceb15a;
             color: #ceb15a;
             margin: 0 8%;
 
@@ -92,7 +99,7 @@ html, body, .container {
             }
 
             &.fade {
-              opacity:.5;
+              opacity:.8;
             }
 
             &.fade.focus {
@@ -110,7 +117,8 @@ html, body, .container {
   }
 
   aside {
-    height: 100%;
+    @extend .full-width-height;
+
     overflow-y: auto;
     position: fixed;
     top: 100%;
@@ -121,8 +129,8 @@ html, body, .container {
       top: 64px;
       animation-name: navAnimate;
       -webkit-animation-name: navAnimate;
-      animation-duration: .8s;
-      -webkit-animation-duration: .8s;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
       z-index: 1;
     }
 
@@ -133,7 +141,22 @@ html, body, .container {
   }
 }
 
+/*********** EXPERTISE ************/
+.carousel-item {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+
 /*********** MEDIA ************/
+
+/*********** Nav ************/
 @media screen and (max-width: 600px) {
   .container {
     .home {
@@ -174,7 +197,7 @@ html, body, .container {
 /************ KEYFRAMES ************/
 @keyframes navAnimate {
   0% { top: 100% }
-  50% {top: 35px}
+  50% {top: 45px}
   100% { top: 64px }
 
 }

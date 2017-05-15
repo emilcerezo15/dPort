@@ -29,10 +29,10 @@ $(document).ready(function () {
             nav.find('a').fadeOut(function () {
                 nav.removeClass('active');
                 $('.nav-content').css('text-align', 'center');
-                $('.bg > a').removeAttr('id');
+                $('.bg > a').removeAttr('id').removeClass('active');
                 $('a.click').find('span').removeAttr('style');
+                nav.find('a').removeClass('click');
                 setTimeout(function (){
-                    nav.find('a').removeClass('click');
                     nav.find('a').fadeIn();
                 }, 600);
             });
@@ -47,7 +47,6 @@ $(document).ready(function () {
 
     /** Initializations **/
     $('.modal').modal();
-
-
+    $('.carousel').carousel();
 
 });
