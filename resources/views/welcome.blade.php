@@ -21,8 +21,8 @@
         </div>
     </div>
 
-    <aside class="aboutme">@include('aboutme')</aside>
-    <aside class="work">@include('work')</aside>
-    <aside class="expertise">@include('expertise')</aside>
-    <aside class="contact">@include('contact')</aside>
+    <aside id="aboutme">@include('aboutme')</aside>
+    <aside id="work">@include('work')</aside>
+    <aside id="expertise">@include('expertise')</aside>
+    <aside id="contact">@include('contact')</aside>
 @endsection

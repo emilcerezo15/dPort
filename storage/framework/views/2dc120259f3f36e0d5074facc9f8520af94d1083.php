@@ -19,9 +19,9 @@
         </div>
     </div>
 
-    <aside class="aboutme"><?php echo $__env->make('aboutme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
-    <aside class="work"><?php echo $__env->make('work', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
-    <aside class="expertise"><?php echo $__env->make('expertise', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
-    <aside class="contact"><?php echo $__env->make('contact', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
+    <aside id="aboutme"><?php echo $__env->make('aboutme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
+    <aside id="work"><?php echo $__env->make('work', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
+    <aside id="expertise"><?php echo $__env->make('expertise', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
+    <aside id="contact"><?php echo $__env->make('contact', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></aside>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var nav = $('nav');
     var afterHashUrl = location.hash.substr(1);
+    var aside = $('aside');
 
     nav.find('a').hover(function () {
         nav.find('a').addClass('fade');
@@ -24,6 +25,7 @@ $(document).ready(function () {
                     $('a.click').find('span').fadeIn();
                     nav.find('a').fadeIn();
                 }, 600);
+
             }
         } else {
             nav.find('a').fadeOut(function () {
@@ -38,9 +40,12 @@ $(document).ready(function () {
             });
         }
 
-        $('aside').removeClass('active');
+        aside.removeClass();
 
-        $('.'+id).addClass('active');
+        if(afterHashUrl) {
+            aside.not('#'+id).addClass('down');
+            $('aside#'+id).addClass('up');
+        }
     });
 
     if(afterHashUrl) $('#'+afterHashUrl).trigger('click');

@@ -1,6 +1,32 @@
 <div>
-    <h4>Contact</h4>
+    <div class="row">
+        <h4>Contact</h4>
 
-    <p>The first argument is the view partial to render for each element in the array or collection. The second argument is the array or collection you wish to iterate over, while the third argument is the variable name that will be assigned to the current iteration within the view. So, for example, if you are iterating over an array of jobs, typically you will want to access each job as a job variable within your view partial. The key for the current iteration will be available as the key variable within your view partial.</p>
+        <form action="">
+            <div class="row">
+                <div class="input-field">
+                    <input type="text" id="name"/>
+                    <label for="name">Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <input type="email" id="email"/>
+                    <label for="email">Email Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <textarea id="comment" class="materialize-textarea"></textarea>
+                    <label for="comment">Comment</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
 
