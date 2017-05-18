@@ -47,11 +47,15 @@ html, body, .container {
       @extend .full-width-height;
 
       > a {
-        position: absolute;
-        top: 10px;
-        left: 10%;
         z-index: 1;
-        color: #ceb15a;
+        position: relative;
+
+        &.profile {
+          position: absolute;
+          top: 10px;
+          left: 10%;
+          color: #ceb15a;
+        }
 
         h1 {
           margin: 0;
@@ -85,6 +89,21 @@ html, body, .container {
         transition: all .3s linear;
         top: 50%;
         position: absolute;
+
+        &#sideBar {
+          position: fixed;
+          top: 0;
+          height: 100%;
+          left: 0;
+          width: 100%;
+          transform: translateX(-100%);
+          background-color: #fff;
+          z-index: 2;
+
+          &.collapse {
+            transform: translateX(0);
+          }
+        }
 
         > div {
           text-align: center;
@@ -161,6 +180,50 @@ aside {
   }
 }
 
+
+@media screen and (max-width: 600px) {
+  .container {
+    .home {
+      .bg {
+        > span {
+          &.custom-btn-collapse {
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+
+            > i {
+              font-size: 30px !important;
+            }
+          }
+        }
+        nav {
+          &.hide-on-collapse {
+            display: none;
+          }
+
+          &#sideBar {
+            .navAClick {
+              display: block;
+              font-weight: 600;
+              text-align: center;
+            }
+
+            > .nav-content {
+              position: absolute;
+              top: 64px;
+              max-width: none;
+              width: 100%;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}
 @keyframes asideAnimateTop {
   0% {top: 100%}
   60% { top: 48px}
@@ -187,4 +250,10 @@ aside {
       height: 100%;
     }
   }
+}
+
+
+
+#closeSidebar {
+  color: #ddd;
 }

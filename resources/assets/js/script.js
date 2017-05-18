@@ -46,12 +46,41 @@ $(document).ready(function () {
             aside.not('#'+id).addClass('down');
             $('aside#'+id).addClass('up');
         }
+
+        navBarMobile(location.hash.substr(1));
+
     });
 
     if(afterHashUrl) $('#'+afterHashUrl).trigger('click');
 
+    $('.custom-btn-collapse').click(function () {
+        var target = $(this).data('target');
+        $('#'+target).addClass('collapse');
+    });
+
+    $('#closeSidebar').click(function () {
+        var target = $(this).data('target');
+        $('#'+target).removeClass('collapse');
+    });
+
+
     /** Initializations **/
     $('.modal').modal();
     $('.carousel').carousel();
-
 });
+
+$( window ).resize(function() {
+    navBarMobile(location.hash.substr(1));
+});
+
+function navBarMobile (afterHashUrl){
+    var width = $( window ).width();
+    var navCollapse = $('.nav-collapse');
+
+    if(width < 600) {
+        alert(afterHashUrl);
+        if(afterHashUrl) navCollapse.addClass('hide-on-collapse');
+        else navCollapse.removeClass('hide-on-collapse');
+    } else
+        navCollapse.addClass('hide-on-collapse');
+}
