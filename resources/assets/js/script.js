@@ -42,12 +42,17 @@ $(document).ready(function () {
             });
         }
 
-        aside.removeClass();
-
         if(afterHashUrl) {
+            aside.removeClass();
+
             if(location.hash.substr(1)) aside.not('#'+id).addClass('down');
             $('aside#'+id).addClass('up');
-        } else aside.not('#'+id).addClass('down');
+        } else {
+            if(location.hash.substr(1).replace('#', '')) {
+                $('aside.up').addClass('down');
+                $('aside.up').removeClass('up');
+            }
+        }
 
         navBarMobile(afterHashUrl);
 

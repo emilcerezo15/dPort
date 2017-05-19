@@ -24,7 +24,7 @@
                     <a href="#expertise" class="navAClick" id="expertise"><i class="fa fa-mouse-pointer"></i><span>Expertise</span></a>
                     <a href="#contact" class="navAClick" id="contact"><i class="fa fa-envelope"></i><span>Contact</span></a>
                 </div>
-                <a data-target="sideBar" id="closeSidebar" >Close</a>
+                <a data-target="sideBar" id="closeSidebar" ><i class="fa fa-close"></i></a>
             </nav>
 
         </div>

@@ -8951,7 +8951,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   }
 }
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://use.fontawesome.com/b3705429a7.css);
+
 .full-width-height, html, body, .container, .container .home, .container .home .filter, .container .home .bg, aside {
   height: 100%;
   width: 100%;
@@ -8983,7 +8984,7 @@ p {
 
 .container .home .filter {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .container .home .bg {
