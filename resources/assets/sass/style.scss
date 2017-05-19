@@ -195,6 +195,7 @@ aside {
 
             > i {
               font-size: 30px !important;
+              color: #ceb15a;
             }
           }
         }
@@ -217,6 +218,13 @@ aside {
               width: 100%;
             }
 
+          }
+          &.nav-collapse {
+            top: 40%;
+
+            a {
+              margin: 10%;
+            }
           }
         }
       }

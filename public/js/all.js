@@ -8314,9 +8314,9 @@ $(document).ready(function () {
 
     $('.navAClick').on('click', function () {
         var id = '';
-        afterHashUrl = $(this).attr('href');
+        afterHashUrl = $(this).attr('href').replace('#', '');
 
-        if(afterHashUrl.replace('#', '')) id = $(this).attr('id');
+        if(afterHashUrl) id = $(this).attr('id');
         else {
             $('.bg > a').attr('id', 'profile');
             id = $('.profile').attr('id');
@@ -8347,11 +8347,11 @@ $(document).ready(function () {
         aside.removeClass();
 
         if(afterHashUrl) {
-            aside.not('#'+id).addClass('down');
+            if(location.hash.substr(1)) aside.not('#'+id).addClass('down');
             $('aside#'+id).addClass('up');
-        }
+        } else aside.not('#'+id).addClass('down');
 
-        navBarMobile(location.hash.substr(1));
+        navBarMobile(afterHashUrl);
 
     });
 
@@ -8386,7 +8386,6 @@ function navBarMobile (afterHashUrl){
     var navCollapse = $('.nav-collapse');
 
     if(width < 600) {
-        alert(afterHashUrl);
         if(afterHashUrl) navCollapse.addClass('hide-on-collapse');
         else navCollapse.removeClass('hide-on-collapse');
     } else

@@ -9129,6 +9129,7 @@ aside > div {
   }
   .container .home .bg > span.custom-btn-collapse > i {
     font-size: 30px !important;
+    color: #ceb15a;
   }
   .container .home .bg nav.hide-on-collapse {
     display: none;
@@ -9143,6 +9144,12 @@ aside > div {
     top: 64px;
     max-width: none;
     width: 100%;
+  }
+  .container .home .bg nav.nav-collapse {
+    top: 40%;
+  }
+  .container .home .bg nav.nav-collapse a {
+    margin: 10%;
   }
 }
 
