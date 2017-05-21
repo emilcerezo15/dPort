@@ -14,8 +14,8 @@ aside * {
 }
 
 p {
-  font-size: 18px;
-  line-height: 40px;
+  font-size: 16px;
+  line-height: 36px;
 }
 
 
@@ -35,7 +35,7 @@ html, body, .container {
 
     .filter {
       position: absolute;
-      background-color: rgba(0,0,0, .7);
+      background-color: rgba(33,147,78, .7);
       @extend .full-width-height;
     }
 
@@ -54,7 +54,7 @@ html, body, .container {
           position: absolute;
           top: 10px;
           left: 10%;
-          color: #ceb15a;
+          color: #ffffff;
         }
 
         h1 {
@@ -112,7 +112,7 @@ html, body, .container {
 
           a {
             display: inline-block;
-            color: #ceb15a;
+            color: #ffffff;
             margin: 0 8%;
 
             i {
@@ -165,13 +165,13 @@ aside {
     top: 64px;
     background-color: #fff;
     -webkit-animation-name: asideAnimateTop;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 1.5s;
     z-index: 1;
   }
 
   &.down {
     -webkit-animation-name: asideAnimateDown;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: .8s;
   }
 
   > div {
@@ -195,7 +195,7 @@ aside {
 
             > i {
               font-size: 30px !important;
-              color: #ceb15a;
+              color: #ffffff;
             }
           }
         }
@@ -239,6 +239,7 @@ aside {
 }
 @keyframes asideAnimateDown {
   0% {top: 64px}
+  30% {top: 32px}
   100%  {top:100%}
 }
 
@@ -248,14 +249,41 @@ aside {
 
 /*************************** About *****************************/
 #aboutme {
+
   .prof-img {
     padding: 0;
     width: 150px;
     height: 150px;
 
-    img {
+    > div.emil {
       width: 100%;
       height: 100%;
+      background-image: url("../images/IMG_0050.JPG");
+      background-position: center 30%;
+      background-size: cover;
+    }
+  }
+
+  .skills {
+    li {
+      line-height: 40px;
+      border-bottom: 1px solid #ededed;
+      text-align: center;
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #aboutme {
+    text-align: center;
+
+    .prof-img {
+      margin: auto;
+    }
+
+    p {
+      text-align: justify;
     }
   }
 }
