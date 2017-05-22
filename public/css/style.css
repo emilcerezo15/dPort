@@ -22,7 +22,31 @@ p {
 .container {
   max-width: none;
   overflow: hidden;
+  /********************* INPUTS ***********************/
   /*********** NAV ************/
+}
+
+.container .custom-btn {
+  background-color: #fff;
+  padding: 10px 40px;
+  color: #21934E;
+  border: 1px solid #21934E;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.container .custom-btn:hover {
+  background-color: #21934E;
+  color: #fff;
+}
+
+.container .defaultInput:focus:not([readonly]), .container input[type=text]:focus:not([readonly]), .container input[type=email]:focus:not([readonly]), .container textarea:focus:not([readonly]) {
+  box-shadow: none;
+  border-bottom-color: #21934E;
+}
+
+.container .defaultInput:focus:not([readonly]) + label, .container input[type=text]:focus:not([readonly]) + label, .container input[type=email]:focus:not([readonly]) + label, .container textarea:focus:not([readonly]) + label {
+  color: #21934E;
 }
 
 .container .home {
@@ -31,11 +55,19 @@ p {
 
 .container .home .filter {
   position: absolute;
-  background-color: rgba(33, 147, 78, 0.7);
+  background-color: rgba(35, 163, 89, 0.8);
+}
+
+.container .home .filter.work {
+  background-color: rgba(230, 136, 34, 0.8);
+}
+
+.container .home .filter.expertise {
+  background-color: rgba(36, 119, 173, 0.8);
 }
 
 .container .home .bg {
-  background-image: url("../images/street.jpg");
+  background-image: url("../images/laptop2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -79,7 +111,7 @@ p {
   background: transparent;
   box-shadow: none;
   transition: all .3s linear;
-  top: 50%;
+  top: 60%;
   position: absolute;
 }
 
@@ -110,6 +142,7 @@ p {
   display: inline-block;
   color: #ffffff;
   margin: 0 8%;
+  font-weight: 600;
 }
 
 .container .home .bg nav > div a i {
@@ -128,7 +161,7 @@ p {
 }
 
 .container .home .bg nav > div a.fade {
-  opacity: .8;
+  opacity: .5;
 }
 
 .container .home .bg nav > div a.fade.focus {
@@ -140,6 +173,7 @@ p {
   line-height: 64px;
 }
 
+/********************** CONTENT ********************/
 aside {
   position: fixed;
   margin: auto;
@@ -153,13 +187,13 @@ aside.up {
   top: 64px;
   background-color: #fff;
   -webkit-animation-name: asideAnimateTop;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
   z-index: 1;
 }
 
 aside.down {
   -webkit-animation-name: asideAnimateDown;
-  -webkit-animation-duration: .8s;
+  -webkit-animation-duration: .5s;
 }
 
 aside > div {

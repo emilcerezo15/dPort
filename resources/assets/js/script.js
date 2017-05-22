@@ -2,12 +2,15 @@ $(document).ready(function () {
     var nav = $('nav');
     var afterHashUrl = location.hash.substr(1);
     var aside = $('aside');
+    var firstload = true;
 
     nav.find('a').hover(function () {
         nav.find('a').addClass('fade');
         $(this).addClass('focus');
+//        $('.filter').addClass($(this).attr('id'));
     }, function () {
         nav.find('a').removeClass('fade').removeClass('focus');
+//        $('.filter').removeClass().addClass('filter');
     });
 
     $('.navAClick').on('click', function () {
@@ -42,11 +45,15 @@ $(document).ready(function () {
             });
         }
 
+        $('.filter').removeClass().addClass('filter').addClass(afterHashUrl);
+
         if(afterHashUrl) {
             aside.removeClass();
-
-            if(location.hash.substr(1)) aside.not('#'+id).addClass('down');
+            if(location.hash.substr(1)) {
+                if(!firstload) aside.not('#'+id).addClass('down');
+            }
             $('aside#'+id).addClass('up');
+            firstload=false;
         } else {
             if(location.hash.substr(1).replace('#', '')) {
                 $('aside.up').addClass('down');
